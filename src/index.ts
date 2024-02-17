@@ -31,7 +31,7 @@ export default async function run(model: Model, options: PluginOptions) {
 
     await writeFile(
       `${DIR}/${camelCaseModelName}.ts`,
-      `import type { Prisma } from "@prisma/client"
+      `import type { Prisma, PrismaClient } from "@prisma/client"
 import { usePrisma } from "./utils/use-prisma"
 
 ${createOperationTypes(model)}
@@ -98,7 +98,7 @@ function createOperationTypes(model: DataModel) {
         "count",
       ].includes(operation)
 
-      const inputType = `export type ${pascalCaseOperation}${modelName}Input = Prisma.Args<Prisma["${camelCaseModelName}"], "${operation}">`
+      const inputType = `export type ${pascalCaseOperation}${modelName}Input = Prisma.Args<PrismaClient["${camelCaseModelName}"], "${operation}">`
       const outputType = withOutput
         ? `\nexport type ${pascalCaseOperation}${modelName}Output<I extends ${pascalCaseOperation}${modelName}Input> = Prisma.${modelName}GetPayload<I>`
         : ""
@@ -116,7 +116,7 @@ function createFn(model: DataModel) {
       const pascalCaseOperation = toPascalCase(operation)
 
       return `export const ${operation}${modelName} = <T extends ${pascalCaseOperation}${modelName}Input> (
-  input?: MaybeRef<Prisma.Exact<T, ${pascalCaseOperation}${modelName}Input>>
+  input?: MaybeRef<Prisma.ExactClient<T, ${pascalCaseOperation}${modelName}Input>>
 ) =>
   usePrisma({
     model: "${camelCaseModelName}",
