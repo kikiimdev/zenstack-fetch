@@ -1,7 +1,7 @@
 {
   "name": "@kiki.im.dev/zenstack-fetch",
   "displayName": "ZenStack Fetch Generator",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Generate fetch function from ZModel schema file of ZenStack with ofetch",
   "main": "index.js",
   "type": "commonjs",
