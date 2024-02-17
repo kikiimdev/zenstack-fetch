@@ -116,7 +116,7 @@ function createFn(model: DataModel) {
       const pascalCaseOperation = toPascalCase(operation)
 
       return `export const ${operation}${modelName} = <T extends ${pascalCaseOperation}${modelName}Input> (
-  input?: MaybeRef<Prisma.ExactClient<T, ${pascalCaseOperation}${modelName}Input>>
+  input?: MaybeRef<Prisma.Exact<T, ${pascalCaseOperation}${modelName}Input>>
 ) =>
   usePrisma({
     model: "${camelCaseModelName}",
