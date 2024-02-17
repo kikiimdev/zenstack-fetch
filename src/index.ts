@@ -18,7 +18,7 @@ export default async function run(model: Model, options: PluginOptions) {
   await mkdir(DIR, { recursive: true })
   await mkdir(`${DIR}/utils`)
 
-  await cp(`${__dirname}/utils/use-prisma.js`, `${DIR}/utils/use-prisma.js`)
+  await cp(`${__dirname}/utils/use-prisma.ts`, `${DIR}/utils/use-prisma.ts`)
 
   // get all data models
   const dataModels = model.declarations.filter((x): x is DataModel =>
