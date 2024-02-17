@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import { Prisma, type PrismaClient } from "@prisma/client"
 import { deserialize } from "superjson"
 import { type MaybeRef, ref, unref } from "vue"
-import { $fetch } from "ofetch"
 
 type Any = Record<string, unknown>
 
@@ -78,13 +79,16 @@ export const usePrisma = async <M extends Model, O extends Operation<M>, S>(
       }
     }
 
+    // @ts-ignore
     const response = await $fetch(`/api/model/${model}/${operation}`, {
+      // @ts-ignore
       method,
       query,
       body,
     })
 
-    const { data: json, meta } = response.value
+    // @ts-ignore
+    const { data: json, meta } = response
     let _data = json
     if (meta) _data = deserialize({ json, meta: meta.serialization })
 
