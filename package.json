@@ -1,7 +1,7 @@
 {
   "name": "@kiki.im.dev/zenstack-fetch",
   "displayName": "ZenStack Fetch Generator",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Generate fetch function from ZModel schema file of ZenStack with ofetch",
   "main": "index.js",
   "type": "commonjs",
@@ -11,8 +11,7 @@
     "build": "bun run lint && bun run clean && tsc && bun run copy",
     "dev": "zenstack generate",
     "watch": "tsc --watch",
-    "lint": "eslint src --ext ts",
-    "publish": "bun run build && npm publish ./dist --access public"
+    "lint": "eslint src --ext ts"
   },
   "dependencies": {
     "@zenstackhq/runtime": "1.9.0",
