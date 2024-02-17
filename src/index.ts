@@ -15,7 +15,7 @@ export default async function run(model: Model, options: PluginOptions) {
     await rm(DIR, {
       recursive: true,
     })
-  await mkdir(DIR)
+  await mkdir(DIR, { recursive: true })
   await mkdir(`${DIR}/utils`)
 
   await cp(`${__dirname}/utils/use-prisma.js`, `${DIR}/utils/use-prisma.js`)
