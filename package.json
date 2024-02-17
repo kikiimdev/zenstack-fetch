@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "@zenstackhq/runtime": "1.9.0",
-    "@zenstackhq/sdk": "^1.9.0"
+    "@zenstackhq/sdk": "^1.9.0",
+    "camelcase": "^8.0.0"
   },
   "devDependencies": {
     "@prisma/client": "^5.9.1",
