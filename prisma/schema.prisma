@@ -12,6 +12,10 @@ generator client {
     provider = "prisma-client-js"
 }
 
+generator fetch {
+    provider = "./dist/index.js"
+}
+
 /// @@allow('create', true)
 /// @@allow('all', auth() == this)
 model User {

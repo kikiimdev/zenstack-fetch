@@ -15,13 +15,14 @@
   },
   "dependencies": {
     "@zenstackhq/runtime": "1.9.0",
-    "@zenstackhq/sdk": "^1.9.0",
-    "camelcase": "^8.0.0"
+    "@zenstackhq/sdk": "^1.9.0"
   },
   "devDependencies": {
     "@prisma/client": "^5.9.1",
+    "@types/bun": "latest",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@typescript-eslint/parser": "^7.0.1",
+    "change-case": "^5.4.3",
     "copyfiles": "^2.4.1",
     "eslint": "^8.56.0",
     "prisma": "^5.9.1",
@@ -29,8 +30,7 @@
     "superjson": "^2.2.1",
     "typescript": "^5.3.3",
     "vue": "^3.4.19",
-    "zenstack": "1.9.0",
-    "@types/bun": "latest"
+    "zenstack": "1.9.0"
   },
   "repository": {
     "type": "git",
