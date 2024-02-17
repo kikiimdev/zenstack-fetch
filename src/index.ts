@@ -52,7 +52,19 @@ function createImportIndex(models: DataModel[]) {
         // const camelCaseModelName = toCamelCase(modelName)
         const pascalCaseOperation = toPascalCase(operation)
 
-        return `  type ${pascalCaseOperation}${modelName}Input,`
+        const withOutput = ![
+          "updateMany",
+          "deleteMany",
+          "aggregate",
+          "count",
+        ].includes(operation)
+
+        const inputImport = `  type ${pascalCaseOperation}${modelName}Input,`
+        const outputImport = withOutput
+          ? `\n type ${pascalCaseOperation}${modelName}Output,`
+          : ""
+
+        return `${inputImport}${outputImport}`
       })
       .join("\n")
 
