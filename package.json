@@ -7,7 +7,8 @@
   "type": "commonjs",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "bun run lint && bun run clean && tsc && copyfiles ./package.json ./README.md ./README-1.svg ./README-2.svg ./LICENSE dist",
+    "copy": "copyfiles ./package.json ./README.md ./README-1.svg ./README-2.svg ./LICENSE dist && copyfiles -u 2 ./src/utils/use-prisma.ts dist/utils",
+    "build": "bun run lint && bun run clean && tsc && bun run copy",
     "dev": "zenstack generate",
     "watch": "tsc --watch",
     "lint": "eslint src --ext ts"
