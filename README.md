@@ -9,7 +9,7 @@ TBD
 ## Setup
 
 ```bash
-npm i -D zenstack-fetch
+npm i -D @kiki.im.dev/zenstack-fetch
 ```
 
 add the plugin in your ZModel schema file
@@ -30,10 +30,12 @@ you will see the `schema.md` generated in the same folder of your ZModel schema 
 
 ## Options
 
-| Name     | Type    | Description                                       | Required | Default   |
+TBD
+
+<!-- | Name     | Type    | Description                                       | Required | Default   |
 | -------- | ------- | ------------------------------------------------- | -------- | --------- |
 | output   | String  | Output file path (relative to the path of ZModel) | No       | schema.md |
-| disabled | Boolean | Whether to run this plugin                        | No       | false     |
+| disabled | Boolean | Whether to run this plugin                        | No       | false     | -->
 
 example:
 
@@ -45,11 +47,11 @@ plugin zenstackmd {
 }
 ```
 
-You can also disable it using env variable
+<!-- You can also disable it using env variable
 
 ```bash
 DISABLE_ZENSTACK_MD=true
-```
+``` -->
 
 ## Local Development
 
