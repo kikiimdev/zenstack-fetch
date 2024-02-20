@@ -16,7 +16,7 @@ add the plugin in your ZModel schema file
 
 ```ts
 plugin fetch {
-    provider = 'zenstack-fetch'
+    provider = '@kiki.im.dev/zenstack-fetch'
 }
 ```
 
@@ -37,7 +37,7 @@ TBD
 | output   | String  | Output file path (relative to the path of ZModel) | No       | schema.md |
 | disabled | Boolean | Whether to run this plugin                        | No       | false     | -->
 
-example:
+<!-- example:
 
 ```ts
 plugin zenstackmd {
@@ -45,7 +45,7 @@ plugin zenstackmd {
     output = 'docs/schema.md'
     disabled = true
 }
-```
+``` -->
 
 <!-- You can also disable it using env variable
 
@@ -55,7 +55,9 @@ DISABLE_ZENSTACK_MD=true
 
 ## Local Development
 
-### Install
+TBD
+
+<!-- ### Install
 
 ```bash
 npm install
@@ -71,11 +73,11 @@ After build, the plugin will be generated in `dist` folder. Then you can use it 
 
 ```ts
 plugin zenstackmd {
-    provider = '.../zenstack-fetch/dist'
+    provider = '.../@kiki.im.dev/zenstack-fetch/dist'
 }
 ```
 
-`provider` could either by the absolute path or relative path to the running `zenstack` module.
+`provider` could either by the absolute path or relative path to the running `zenstack` module. -->
 
 ### Run Sample
 
