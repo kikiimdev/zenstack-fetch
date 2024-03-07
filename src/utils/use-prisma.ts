@@ -80,13 +80,13 @@ export const usePrisma = async <M extends Model, O extends Operation<M>, S>(
     }
 
     // @ts-ignore
-    const { data } = await useFetch(`/api/model/${model}/${operation}`, {
+    const { data: fetch } = await useFetch(`/api/model/${model}/${operation}`, {
       // @ts-ignore
       method,
       query,
       body,
     })
-    const response = data.value
+    const response = fetch.value
 
     // @ts-ignore
     const { data: json, meta } = response
