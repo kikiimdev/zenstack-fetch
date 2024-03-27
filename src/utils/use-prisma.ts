@@ -89,7 +89,9 @@ export const usePrisma = async <M extends Model, O extends Operation<M>, S>(
         body,
       }
     )
-    if (error.value) throw new Error(error.value)
+    console.log({ errorValue: error.value })
+
+    if (error.value) return error.value
     const response = fetch.value
 
     // @ts-ignore
