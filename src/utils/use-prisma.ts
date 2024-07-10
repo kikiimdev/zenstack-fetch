@@ -2,7 +2,7 @@
 
 import { Prisma, type PrismaClient } from "@prisma/client"
 import { deserialize } from "superjson"
-import { type MaybeRef, ref, unref } from "vue"
+import { type MaybeRef, ref, unref, watch } from "vue"
 
 type Any = Record<string, unknown>
 
@@ -80,6 +80,8 @@ export const usePrisma = async <M extends Model, O extends Operation<M>, S>(
     }
 
     // @ts-ignore
+    const headers = useRequestHeaders()
+    // @ts-ignore
     const { data: fetch, error } = await useFetch(
       `/api/model/${model}/${operation}`,
       {
@@ -87,6 +89,9 @@ export const usePrisma = async <M extends Model, O extends Operation<M>, S>(
         method,
         query,
         body,
+        headers,
+        watch: false,
+        deep: false,
       }
     )
 
