@@ -2,7 +2,7 @@
 
 import { Prisma, type PrismaClient } from "@prisma/client"
 import { deserialize } from "superjson"
-import { type MaybeRef, ref, unref, watch } from "vue"
+import { type MaybeRef, ref, unref } from "vue"
 
 type Any = Record<string, unknown>
 
