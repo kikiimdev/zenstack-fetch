@@ -95,6 +95,7 @@ export const usePrisma = async <M extends Model, O extends Operation<M>, S>(
     //   }
     // )
     const error = ref(null)
+    // @ts-ignore
     const fetch = await $fetch(`/api/model/${model}/${operation}`, {
       method,
       query,
