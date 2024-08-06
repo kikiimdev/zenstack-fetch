@@ -82,21 +82,31 @@ export const usePrisma = async <M extends Model, O extends Operation<M>, S>(
     // @ts-ignore
     const headers = useRequestHeaders()
     // @ts-ignore
-    const { data: fetch, error } = await useFetch(
-      `/api/model/${model}/${operation}`,
-      {
-        // @ts-ignore
-        method,
-        query,
-        body,
-        headers,
-        watch: false,
-        deep: false,
-      }
-    )
+    // const { data: fetch, error } = await useFetch(
+    //   `/api/model/${model}/${operation}`,
+    //   {
+    //     // @ts-ignore
+    //     method,
+    //     query,
+    //     body,
+    //     headers,
+    //     watch: false,
+    //     deep: false,
+    //   }
+    // )
+    const error = ref(null)
+    const fetch = await $fetch(`/api/model/${model}/${operation}`, {
+      method,
+      query,
+      body,
+      headers,
+      // @ts-ignore
+    }).catch((e) => (error.value = e))
 
     if (error.value) throw error.value
-    const response = fetch.value
+    // const response = fetch.value
+
+    const response = fetch
 
     // @ts-ignore
     const { data: json, meta } = response
