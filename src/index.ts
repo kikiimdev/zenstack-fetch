@@ -31,7 +31,8 @@ export default async function run(model: Model, options: PluginOptions) {
 
     await writeFile(
       `${DIR}/${camelCaseModelName}.ts`,
-      `import type { Prisma, PrismaClient } from "@prisma/client"
+      `import { Prisma } from "@prisma/client"
+import { type PrismaClient } from "@zenstackhq/runtime"
 import { usePrisma } from "./utils/use-prisma"
 
 ${createOperationTypes(model)}
