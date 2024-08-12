@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import { Prisma } from "@prisma/client"
+import type { Prisma } from "@zenstackhq/runtime/models"
 import { type PrismaClient } from "@zenstackhq/runtime"
 import { deserialize } from "superjson"
 import { type MaybeRef, ref, unref } from "vue"
